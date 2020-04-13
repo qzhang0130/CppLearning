@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main(){
-	Trie root;
+	std::Trie root;
 	std::string test = "abc";
 	root.insert(test);
 	std::cout<<root.find("bcd")<<std::endl;
