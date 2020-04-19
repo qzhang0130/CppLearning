@@ -22,4 +22,8 @@ TEST_CASE( "Factorials are computed", "[factorial]" ) {
 TEST_CASE( "New test case", "[general]"){
     REQUIRE( 0 == 0);
     std::Trie trie;
+    trie.insert("abc");
+    REQUIRE(trie.find("abc") == true);
+    REQUIRE(trie.find("cd") == false);
+    REQUIRE(trie.startWith("ab") == true);
 }
