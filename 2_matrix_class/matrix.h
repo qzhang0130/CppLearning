@@ -1,6 +1,9 @@
+#include <vector>
+
 class Matrix{
-	Matrix(vector<vector<int>>&);
-	Matrix(const Matrix&)
+public:
+	Matrix(std::vector<std::vector<int>>&);
+	Matrix(const Matrix&);
 	Matrix(int, int);
 
 	Matrix& operator=(const Matrix& other);
@@ -8,9 +11,13 @@ class Matrix{
 	Matrix operator-(const Matrix& other);
 	Matrix operator*(const Matrix& other);
 
-	void print();
+	std::vector<std::vector<int>> getVector() const;
+
+	std::pair<int, int> getDimensions() const;
+
+	void print() const;
 
 private:
-	vector<vector<int>> data;
-	int row_, col_;
+	std::vector<std::vector<int>> data_;
+	int r_, c_;
 };

@@ -26,4 +26,5 @@ TEST_CASE( "New test case", "[general]"){
     REQUIRE(trie.find("abc") == true);
     REQUIRE(trie.find("cd") == false);
     REQUIRE(trie.startWith("ab") == true);
+    REQUIRE(trie.find("abcde") == true);
 }
