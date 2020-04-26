@@ -1,7 +1,9 @@
 #include "trie.h"
+#include <assert.h>
 
 namespace std{
 	void Trie::insert(const std::string& word){
+		assert(word.size()>0);
 		auto cur = &root;
 		for(auto ch: word){
 			if(!cur->children.count(ch)){

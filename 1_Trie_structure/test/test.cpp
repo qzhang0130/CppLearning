@@ -26,5 +26,6 @@ TEST_CASE( "Trie Structure Stress test", "[general]"){
 }
 
 TEST_CASE( "Exceptions", "[exceptions]"){
-	
+    std::Trie trie;
+    REQUIRE_THROWS(trie.insert(""));	
 }
