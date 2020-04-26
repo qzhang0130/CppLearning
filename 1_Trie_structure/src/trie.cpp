@@ -32,6 +32,10 @@ namespace std{
 		return true;
 	}
 
+	void Trie::print(){
+		throw "Do not support print";
+	}
+
 	Trie::Trie(){
 	}
 }

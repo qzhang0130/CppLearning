@@ -7,6 +7,7 @@ namespace std{
 		void insert(const std::string& word);
 		bool find(const std::string& word);
 		bool startWith(const std::string& prefix);
+		void print();
 		Trie();
 	private:
 		struct TrieNode{
