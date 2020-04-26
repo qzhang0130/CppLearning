@@ -12,3 +12,19 @@ TEST_CASE( "Basic Trie Structure Test", "[general]"){
     REQUIRE(trie.find("abcde") == false);
     REQUIRE(trie.find("")==false);
 }
+
+// Test extreme cases
+TEST_CASE( "Trie Structure Stress test", "[general]"){
+    std::Trie trie;
+    std::string longStr = "abcdefghigklmnopqrestvwxyzsjlfaslfjsalfjsjlsfjsldfjsadklfjsdlkfsdklfsdfkjsfjsdkfsdfsdkjfslkfjsdlkfjsdkfjsdklfjsklfsdjkfsdjfklsjflksdjfsdlfjsdlkfjsdlfjsdlkfjsdfklsjdlkfjsdlkfsjdkflsjdflksdjfsldkfjsdklfjsdklfjsdlkfjsdk";
+    trie.insert(longStr);
+    REQUIRE(trie.find(longStr) == true);
+    REQUIRE(trie.find(longStr.substr(0,20))==false);
+    REQUIRE(trie.startWith(longStr)==true);
+    REQUIRE(trie.startWith(longStr.substr(0,20))==true);
+    REQUIRE(trie.find(longStr)==true);
+}
+
+TEST_CASE( "Exceptions", "[exceptions]"){
+	
+}
