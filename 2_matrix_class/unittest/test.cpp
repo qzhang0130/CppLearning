@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "../src/matrix.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -12,5 +12,8 @@ int main(){
 	Matrix m2(vet2);
 	m2.print();
 	(m1*m2).print();
+
+	Matrix c = m1 + m2;
+	c.print();
 	return 0;
 }

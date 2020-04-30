@@ -19,15 +19,31 @@ Matrix::Matrix(int r, int c):r_(r), c_(c), data_(r, std::vector<int>(c, 0)){
 
 
 Matrix& Matrix::operator=(const Matrix& other){
+	data_ = other.data_;
+	r_ = other.r_;
+	c_ = other.c_;
 
+	return *this;
 }
 
 Matrix Matrix::operator+(const Matrix& other){
-
+	Matrix ans(*this);
+	for(int i = 0; i < ans.r_; i++){
+		for(int j = 0; j < ans.c_; j++){
+			ans.data_[i][j] += other.data_[i][j];
+		}
+	}
+	return ans;
 }
 
 Matrix Matrix::operator-(const Matrix& other){
-
+	Matrix ans(*this);
+	for(int i = 0; i < ans.r_; i++){
+		for(int j = 0; j < ans.c_; j++){
+			ans.data_[i][j] -= other.data_[i][j];
+		}
+	}
+	return ans;
 }
 
 Matrix Matrix::operator*(const Matrix& other){
