@@ -33,3 +33,28 @@ TEST_CASE( "Matrix addition subtraction", "[general]"){
 	res = mat4.getVector();
 	REQUIRE(ans == res);
 }
+
+TEST_CASE( "Matrix multiplication", "[general]"){
+	std::vector<std::vector<int>> vec1{{1,2}, {3,4}};
+	Matrix mat1(vec1);
+
+	std::vector<std::vector<int>> vec2{{1,2}, {3,4}};
+	Matrix mat2(vec2);
+
+	Matrix mat3 = mat1 * mat2;
+
+	auto res = mat3.getVector();
+	std::vector<std::vector<int>> ans{{7, 10}, {15, 22}};
+	REQUIRE(res == ans);
+
+	vec1 = {{1, 2, 3}, {4, 5, 6}};
+	vec2 = {{3}, {2}, {1}};
+	Matrix mat4(vec1);
+	Matrix mat5(vec2);
+
+	Matrix mat6 = mat4*mat5;
+	res = mat6.getVector();
+	ans = {{10}, {28}};
+	REQUIRE(res == ans);
+
+}
