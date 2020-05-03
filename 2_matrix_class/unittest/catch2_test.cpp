@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "../src/matrix.h"
+#include "../src/matrix.cpp"
 #include <vector>
 
 TEST_CASE( "Basic Matrix Structure Test", "[general]"){
