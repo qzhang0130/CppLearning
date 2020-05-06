@@ -61,9 +61,34 @@ TEST_CASE( "Matrix multiplication", "[general]"){
 
 }
 
-TEST_CASE( "Matrix output", "[general]"){
+TEST_CASE( "Matrix multiplication double", "[general]"){
+	std::vector<std::vector<double>> vec1{{1,2}, {3,4}};
+	Matrix<double> mat1(vec1);
+
+	std::vector<std::vector<double>> vec2{{1,2}, {3,4}};
+	Matrix<double> mat2(vec2);
+
+	Matrix<double> mat3 = mat1 * mat2;
+
+	auto res = mat3.getVector();
+	std::vector<std::vector<double>> ans{{7, 10}, {15, 22}};
+	REQUIRE(res == ans);
+
+	vec1 = {{1, 2, 3}, {4, 5, 6}};
+	vec2 = {{3}, {2}, {1}};
+	Matrix<double> mat4(vec1);
+	Matrix<double> mat5(vec2);
+
+	Matrix<double> mat6 = mat4*mat5;
+	res = mat6.getVector();
+	ans = {{10}, {28}};
+	REQUIRE(res == ans);
+
+}
+
+TEST_CASE( "Matrix output", "[output]"){
 	std::vector<std::vector<int>> vec1{{1,2}, {3,4}};
 	Matrix<int> mat1(vec1);
 
-	// REQUIRE_NOTHROW(std::cout<<mat1<<std::endl);
+	REQUIRE_NOTHROW(std::cout<<mat1<<std::endl);
 }
