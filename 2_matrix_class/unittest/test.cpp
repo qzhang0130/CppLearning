@@ -16,5 +16,7 @@ int main(){
 
 	Matrix<int> c = m1 + m2;
 	c.print();
+
+	std::cout<<c;
 	return 0;
 }

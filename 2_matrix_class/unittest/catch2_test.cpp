@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "../src/matrix.h"
 #include "../src/matrix.cpp"
+#include <iostream>
 #include <vector>
 
 TEST_CASE( "Basic Matrix Structure Test", "[general]"){
@@ -58,4 +59,11 @@ TEST_CASE( "Matrix multiplication", "[general]"){
 	ans = {{10}, {28}};
 	REQUIRE(res == ans);
 
+}
+
+TEST_CASE( "Matrix output", "[general]"){
+	std::vector<std::vector<int>> vec1{{1,2}, {3,4}};
+	Matrix<int> mat1(vec1);
+
+	// REQUIRE_NOTHROW(std::cout<<mat1<<std::endl);
 }

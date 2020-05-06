@@ -88,3 +88,15 @@ void Matrix<T>::print() const{
 		std::cout<<std::endl;
 	}
 }
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, Matrix<T>& mat){
+	auto dim = mat.getDimensions();
+	for(int i = 0; i < dim.first; i++){
+		for(int j = 0; j < dim.second; j++){
+			os<<mat[i][j]<<" ";
+		}
+		os<< std::endl;
+	}
+	return os;
+}
