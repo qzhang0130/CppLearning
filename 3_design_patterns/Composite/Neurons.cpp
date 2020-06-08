@@ -20,12 +20,6 @@ struct Neuron{
 		}
 	}
 
-	template<>
-	void connect_to<Neuron>(Neuron& other){
-		out.push_back(&other);
-		other.in.push_back(this);
-	}
-
 	Neuron* begin() { return this; }
 	Neuron* end() { return this + 1;}
 
@@ -41,10 +35,17 @@ struct Neuron{
 	}
 };
 
+
+template<>
+void Neuron::connect_to<Neuron>(Neuron& other){
+	out.push_back(&other);
+	other.in.push_back(this);
+}
+
 struct NeuronLayer: vector<Neuron>{
-	Neuron(int count){
+	NeuronLayer(int count){
 		while(count-- > 0){
-			emplace_back(Neuron{})
+			emplace_back(Neuron{});
 		}
 	}
 
