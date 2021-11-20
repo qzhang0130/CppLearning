@@ -7,5 +7,4 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/bin")
 set(LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 add_subdirectory(1_Trie_structure)
-add_subdirectory(2_matrix_class)
 
